@@ -2,6 +2,54 @@
 
 <h1>Listing Degrees</h1>
 
+
+            <table border="0">
+            <tbody id="courseTable">
+                    <tr class="class">
+                      <th colspan="1">Freshman</th>
+                      <th colspan="1">Sophomore</th>
+                      <th colspan="1">Junior</th>
+                      <th colspan="1" class="last">Senior</th>
+                    </tr>
+               
+            <tr>
+            <td id='Freshman'>
+            <div id='MTH141'>MTH141</div>
+            <div id='CHE107'>CHE107</div>
+            <div id='EAS140'>EAS140</div>
+            <div>Gen Ed</div>
+            <div>Gen Ed</div>
+            </td>
+            <td id='Sophomore'>
+            <div id='MAE338'>MAE338</div>
+            <div id='MAE377'>MAE377</div>
+            <div id='MAE422'>MAE422</div>
+            <div id='MAE436'>MAE436</div>
+            <div id='MAE451'>MAE451</div>
+            <div>Gen Ed</div>
+            </td>
+            <td id='Junior'>
+            <div id='MAE338'>MAE338</div>
+            <div id='MAE377'>MAE377</div>
+            <div id='MAE422'>MAE422</div>
+            <div id='MAE436'>MAE436</div>
+            <div id='MAE451'>MAE451</div>
+            <div>Gen Ed</div>
+            </td>
+            <td id='Senior'>
+            <div id='MAE423'>MAE423</div>
+            <div id='MAE425'>MAE425</div>
+            <div id='MAE434'>MAE434</div>
+            <div id='TechElective'>Tech Elective</div>
+            <div>Gen Ed</div>
+            </td>
+            </tr>
+            </tbody> 
+            </table>
+
+
+
+
 <ul>
   <% @parsed.each do |event| %>
       <% event.each do |e| %>
@@ -9,21 +57,46 @@
       <br />
        <% e.drop(1).each do |f| %>
        <br />
-       <table>
-          <tr>
-           <th>name</th>
-           <th>description</th>
-           <th>prerequistes</th>
-           <th>hours</th>
-          </tr>
-       <% f.each do |g| %>
-          <tr>
-            <td><%= g["name"] %></td>
-            <td><%= g["description"] %></td>
-            <td><%= g["prerequisites"] %></td>
-            <td><%= g["hours"] %></td>
-          </tr>
-      <% end %>
+         <table border="0">
+            <tbody id="courseTable">
+                    <tr class="class">
+                      <th colspan="1">Freshman</th>
+                      <th colspan="1">Sophomore</th>
+                      <th colspan="1">Junior</th>
+                      <th colspan="1">Senior</th>
+                      <th colspan="1" class="last">Grad</th>
+                    </tr>
+          
+          <% f.each do |g| %>
+         </tr>
+          <td id='Freshman'>
+          <% if g["name"].split(' ')[1].chars.first == '1'  %>
+            <div id=''><%= g["name"] %></div>
+          <% end %>
+          </td>
+          <td id='Sophomore'>
+          <% if g["name"].split(' ')[1].chars.first == '2'  %>
+            <div id=''><%= g["name"] %></div>
+          <% end %>
+          </td>
+          <td id='Junior'>
+          <% if g["name"].split(' ')[1].chars.first == '3'  %>
+            <div id=''><%= g["name"] %></div>
+          <% end %>
+          </td>
+          <td id='Senior'>          
+          <% if g["name"].split(' ')[1].chars.first == '4'  %>
+            <div id=''><%= g["name"] %></div>
+          <% end %>
+          </td>
+          <td id='Grad'>          
+          <% if g["name"].split(' ')[1].chars.first > '4'  %>
+            <div id=''><%= g["name"] %></div>
+          <% end %>
+          </td>
+        <% end %>
+        </tr>
+        </tbody> 
        </table>
        <br />
        <br />
