@@ -5,7 +5,8 @@ class DegreesController < ApplicationController
   # GET /degrees.json
   def index
     @degrees = Degree.all
-    response = RestClient.get 'http://jsonplaceholder.typicode.com/posts'
+    #response = RestClient.get 'http://jsonplaceholder.typicode.com/posts'
+    response = RestClient.get 'https://api.myjson.com/bins/1rlz1'
     @parsed = JSON.parse(response)
   end
 
