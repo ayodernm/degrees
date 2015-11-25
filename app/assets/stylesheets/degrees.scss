@@ -3,4 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 table, th, td {
     border: 1px solid black;
+    border-collapse: collapse;
+}
+row :nth-child(odd){
+  background-color:red;
+}
+row :nth-child(even){
+  background-color:green;
 }
