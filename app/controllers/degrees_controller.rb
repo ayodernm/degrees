@@ -4,9 +4,11 @@ class DegreesController < ApplicationController
   # GET /degrees
   # GET /degrees.json
   def index
+    @dept_name = params[:dept_name]
     @degrees = Degree.all
     #response = RestClient.get 'http://jsonplaceholder.typicode.com/posts'
-    response = RestClient.get 'https://api.myjson.com/bins/1rlz1'
+    #response = RestClient.get 'https://api.myjson.com/bins/1rlz1'
+    response = RestClient.get 'https://api.myjson.com/bins/4k8l7'
     @parsed = JSON.parse(response)
   end
 

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1><center>UNM -DEPARTMENTS</center></h1>
+<br />
+<br />
+  <% @parsed_dept.each do |event| %>
+    <% event.drop(1).each do |e| %>
+      <% e.each do |f| %>
+      <% dept_name = f["name"] %>
+       <li><%= link_to(dept_name, degrees_path(:dept_name => dept_name)) %></li>
+        <% end %>   
+       <% end %> 
+      <% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @depts.each do |dept| %>
+      <tr>
+        <td><%= link_to 'Show', dept %></td>
+        <td><%= link_to 'Edit', edit_dept_path(dept) %></td>
+        <td><%= link_to 'Destroy', dept, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!--<%= link_to 'New Dept', new_dept_path %>-->
