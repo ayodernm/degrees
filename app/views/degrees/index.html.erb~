@@ -30,9 +30,9 @@
 		 <%if @b[i][j][0]!=['Req']%>
 		  <%prestr=""%>			
 	      <%@b[i][j][2].each do |pre|%>
-		  <%prestr=""+#{pre}+" "%>
-	      <%end%>         
- 		<div id="<%= @b[i][j][0]%>" pre="<%=#{prestr} %>"><%= @b[i][j][0]%> </div>
+		  <%prestr=""+pre.to_s+ " " %>
+	      <%end %>         
+ 		<div id="<%= @b[i][j][0]%>" pre="<%=prestr%>"><%= @b[i][j][0]%> </div>
 			<!--<br></br>-->
 			<span class="crs_title"><%= @b[i][j][1]%></span>
 		<%else%>
