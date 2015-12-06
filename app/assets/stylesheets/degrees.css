@@ -1,0 +1,98 @@
+/* @override 
+	http://www.eng.buffalo.edu/undergrad/advisement/flowsheets/flo_style_.css
+	http://www.eng.buffalo.edu/undergrad/advisement/flowsheets-new/flo_style_.css
+*/
+
+#courseTable div:hover { background-color: #C8E6F6;}
+#courseTable .prereq { background-color:#FFFFC6; }
+#courseTable .prereq.immediate { background-color:#FFFF00; }
+#courseTable .coreq { background-color:#FFD0D0; }
+#courseTable .coreq.immediate { background-color:#FF9E9E; }
+#courseTable .postreq{ background-color:#7DDB95; }
+#courseTable .postcoreq{ background-color:#AEEDD7; }
+
+#techelec.active {
+	background-color: #FFCC00;
+}
+#techelec {
+	padding: 5px;
+	margin-left: -5px;
+}
+
+h1
+{
+	align-text: center;
+}
+
+#courseTable div, #courseTable th {font-size:10px; font-weight: bold;}
+#courseTable th {height:14px; background-color:#545454;color:white; padding:5px 2px 2px 5px; border-right: 1px solid white; border-bottom: 1px solid white;}
+#courseTable div { height:46px; width:90px; background-color:#E2EDF3; margin:1px; padding:5px 2px 2px 5px;}
+#courseTable td { border: 0px; padding: 0px; margin: 0px; vertical-align: top;}
+
+#courseTable .recommended{ border:1px dashed #000000; width: 58px; height: 30px }
+
+#courseTable tr.totals td{
+	border-top : 1px dashed #333;
+	border-bottom : 1px dashed #333;
+	font-size: 0.8em;
+	padding:3px;
+	text-transform : uppercase;
+	font-weight: bold;
+	text-align: center;
+}
+
+.crs_title {
+	font-style: italic;
+	font-weight: normal;
+	font-size: 9px;
+}
+
+#div_content li {
+	line-height: 1.7em;
+}
+
+div.footnote {
+	border: 1px solid #DCB00D;
+	background: #FFE45C;
+	padding: 10px;
+	text-align: justify;
+}
+
+div.footnote .ui-icon{
+	background-image: url(/undergrad/apps/css/ui-lightness/images/ui-icons_228ef1_256x240.png);
+	margin-right: 5px;
+}
+
+div.footnote .foot-text {
+	//padding-left:25px;
+	padding: 0px 15px 0px 25px;
+	margin:0px;
+}
+
+div.footnote ul { 
+	margin-left: 5px;
+}
+
+div.footnote li {
+	line-height: 1em !important;
+	margin: 0px !important;
+	padding: 0px;
+}
+
+div#EE000{
+	visibility:hidden;
+}
+
+/*ADDED 2.20.14*/
+/* HOVER STYLES */
+div#popup {
+  display: none;
+  position: absolute;
+  width: 115px;
+  background: #E2EDF3;
+  color: #000000;
+  border: 1px solid #1a1a1a;
+  padding: 8px;
+  font-weight:bold;
+  font-size:10px;
+}

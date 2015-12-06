@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><center>UNM -COURSES</center></h1>
+<h1>UNM COURSES</h1>
 
 
 <br />
@@ -30,7 +30,8 @@
 		 <%if @b[i][j][0]!=['Req']%>
 		  <%prestr=""%>			
 	      <%@b[i][j][2].each do |pre|%>
-		  <%prestr=""+pre.to_s + " " %>
+		  <%prestr << pre.to_s %>
+		  <%prestr << " " %>
 	      <%end %>         
  		<div id="<%= @b[i][j][0]%>" pre="<%=prestr%>"><%= @b[i][j][0]%> </div>
 			<!--<br></br>-->
