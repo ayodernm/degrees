@@ -3,14 +3,18 @@
 <h1><center>UNM -DEPARTMENTS</center></h1>
 <br />
 <br />
-  <% @parsed_dept.each do |event| %>
-    <% event.drop(1).each do |e| %>
-      <% e.each do |f| %>
-      <% dept_name = f["name"] %>
-       <li><%= link_to(dept_name, degrees_path(:dept_name => dept_name)) %></li>
-        <% end %>   
-       <% end %> 
+
+
+ <% @parsed_dept.each do |event| %>
+      <% dept_name = event["url"] %>
+       <li><%= link_to(event["name"], degrees_path(:dept_name => dept_name)) %></li> 
       <% end %>
+
+<br />
+<br />
+<br />
+
+
 
 <table>
   <thead>

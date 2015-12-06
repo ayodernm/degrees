@@ -5,11 +5,14 @@ class DeptsController < ApplicationController
   # GET /depts.json
   def index
     @depts = Dept.all
-    response_dept = RestClient.get 'https://api.myjson.com/bins/4k8l7'
+    #response_dept = RestClient.get 'https://api.myjson.com/bins/4k8l7'
+    #response_dept = RestClient.get 'https://api.myjson.com/bins/3l4rz'
+    response_dept = RestClient.get 'https://api.myjson.com/bins/4x5xz'
+    
     @parsed_dept = JSON.parse(response_dept)
   end
 
-  # GET /depts/1
+  # GET /depts/1  
   # GET /depts/1.json
   def show
   end

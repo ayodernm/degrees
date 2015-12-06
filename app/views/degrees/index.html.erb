@@ -1,135 +1,58 @@
 <p id="notice"><%= notice %></p>
 
 <h1><center>UNM -COURSES</center></h1>
-<h2><center><%= @dept_name %></center></h2>
-           
-
-<ul>
-  <% @parsed.each do |event| %>
-      <% event.each do |e| %>
-    </br>
-      <center><strong><%= e.first %></strong></center>
-      <br />
-       <% e.drop(1).each do |f| %>
-       <br />
-         
-          <% freshman= Array.new(200)  %>
-          <% i = 0 %>
-          <% sophomore= Array.new(200)  %>
-          <% j = 0 %>
-          <% junior= Array.new(200)  %>
-          <% k = 0 %>
-          <% senior= Array.new(200)  %>
-          <% l = 0 %>
-          <% grad= Array.new(200)  %>
-          <% m = 0 %>
-          <% f.each do |g| %>
-          <% if g["name"].split(' ')[1].chars.first == '1'  %>
-          <% freshman.insert(i,g["name"]) %>
-          <% i=i+1 %>
-          <% end %>
-          <% if g["name"].split(' ')[1].chars.first == '2'  %>
-          <% sophomore.insert(j,g["name"]) %>
-          <% j=j+1 %>
-          <% end %>
-          <% if g["name"].split(' ')[1].chars.first == '3'  %>
-          <% junior.insert(k,g["name"]) %>
-          <% k=k+1 %>
-          <% end %>          
-          <% if g["name"].split(' ')[1].chars.first == '4'  %>
-          <% senior.insert(l,g["name"]) %>
-          <% l=l+1 %>
-          <% end %>          
-          <% if g["name"].split(' ')[1].chars.first > '4'  %>
-          <% grad.insert(m,g["name"]) %>
-          <% m=m+1 %>
-          <% end %>
-        <% end %>
 
 
-        <% freshman= freshman - ["",nil] %>
-        <% sophomore= sophomore - ["",nil] %>
-        <% junior= junior - ["",nil] %>
-        <% senior= senior - ["",nil] %>
-        <% grad= grad - ["",nil] %>
 
-<div class="row"> 
-  <div class="col-md-2" >
-        <table class="table table-bordered" style="float : left">
-            <tbody id="fTable">
-                    <tr class="class">
-                      <th colspan="1">Freshman</th>
-                    </tr>
-                      <% freshman.each do |q| %>
-                      <tr><td><%= q%></td></tr>
-                      <% end %>
-                    </tr>
-                    </tbody> 
-                    </table>
-  </div>
-  <div class="col-md-2" >
-        <table class="table table-bordered"  style="float : left">
-            <tbody id="sTable">
-                    <tr class="class">
-                      <th colspan="1">Sophomore</th>
-                    </tr>
-                      <% sophomore.each do |q| %>
-                      <tr><td><%= q%></td></tr>
-                      <% end %>
-                    </tr>
-                    </tbody> 
-                    </table>
-  </div>
-  <div class="col-md-2" >
-          <table class="table table-bordered" style="float : left">
-            <tbody id="jTable"  >
-                    <tr class="class">
-                      <th colspan="1">Junior</th>
-                    </tr>
-                      <% junior.each do |q| %>
-                      <tr><td><%= q%></td></tr>
-                      <% end %>
-                    </tr>
-                    </tbody> 
-                    </table>
-  </div>
-  <div class="col-md-2" >
-          <table class="table table-bordered" style="float : left">
-            <tbody id="seTable">
-                    <tr class="class">
-                      <th colspan="1">Senior</th>
-                    </tr>
-                      <% senior.each do |q| %>
-                      <tr><td><%= q%></td></tr>
-                      <% end %>
-                    </tr>
-                    </tbody> 
-                    </table>
-  </div>
-  <div class="col-md-2" >
-          <table class="table table-bordered"style="float : left">
-            <tbody id="gTable">
-                    <tr class="class">
-                      <th colspan="1">Grad</th>
-                    </tr>
-                      <% grad.each do |q| %>
-                      <tr><td><%= q%></td></tr>
-                      <% end %>
-                    </tr>
-                    </tbody> 
-                    </table>
- </div> 
- </div>
 
-          
-                    
-       <br />
-       <br />
-      <% end %>
-     <% end %>  
+
+
+<% a=[] %>
+<% b=[] %>
+<% count=0 %>
+<% max_requirements=0 %>
+<% no_of_terms=@parsed['terms'].size %>
+<% for k in 0..no_of_terms-1%>
+    <% count =@parsed['terms'][k]['requirements'].size %> 
+    <% if max_requirements < count %>
+        <% max_requirements=count %>
+    <% end %>
+<% end %>       
+
+<% for i in 0..no_of_terms-1 %>
+  <% for j in 0..@parsed['terms'][i]['requirements'].size-1 %>
+    <% a.push(@parsed['terms'][i]['requirements'][j]['name']) %>
   <% end %>
-</ul>
+<% b << a%>
 
+<% end %>
+<li><%= b %></li>
+<%= b[0][0] %>
+
+
+<br />
+<br />
+
+
+
+<table border="1">
+      <tbody id="courseTable">
+        <tr class="class">
+          <th colspan="2">Freshman</th>
+          <th colspan="2">Sophomore</th>
+          <th colspan="2">Junior</th>
+          <th colspan="2" class="last">Senior</th>
+        </tr>
+        <tr class="semester">
+          <th>Fall</th>
+          <th>Spring</th>
+          <th>Fall</th>
+          <th>Spring</th>
+          <th>Fall</th>
+          <th>Spring</th>
+          <th>Fall</th>
+          <th class="last">Spring</th>
+        </tr>
 
 
 <br />
