@@ -27,10 +27,10 @@ class DegreesController < ApplicationController
       for j in 0..@parsed['terms'][i]['requirements'].size-1
 		  if @parsed['terms'][i]['requirements'][j]['courses'].size >=1        
 			for k in 0..@parsed['terms'][i]['requirements'][j]['courses'].size-1
-	          a<< [@parsed['terms'][i]['requirements'][j]['courses'][k]['number'],@parsed['terms'][i]['requirements'][j]['courses'][k]['title'],@parsed['terms'][i]['requirements'][j]['courses'][k]['prerequisites']]
+	          a<< [@parsed['terms'][i]['requirements'][j]['courses'][k]['number'],@parsed['terms'][i]['requirements'][j]['courses'][k]['title']]
 			end
 		  else
-	        a<< [['Req'],@parsed['terms'][i]['requirements'][j]['name'],['']]
+	        a<< [['Req'],@parsed['terms'][i]['requirements'][j]['name']]
 		  end
       	     
 	end	
