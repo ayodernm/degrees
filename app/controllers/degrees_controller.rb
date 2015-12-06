@@ -11,6 +11,24 @@ class DegreesController < ApplicationController
     #response = RestClient.get 'https://api.myjson.com/bins/3l4rz'
     response = RestClient.get @dept_name
     @parsed = JSON.parse(response)
+    @a=[]
+    @b=[]
+    @count=0
+    @max_requirements=0
+    @no_of_terms=@parsed['terms'].size
+    for k in 0..@no_of_terms-1
+    	@count =@parsed['terms'][k]['requirements'].size 
+    	if @max_requirements < @count
+        	@max_requirements=@count
+    	end
+    end        
+
+    for i in 0..@no_of_terms-1
+    	for j in 0..@parsed['terms'][i]['requirements'].size-1
+    		@a.push(@parsed['terms'][i]['requirements'][j]['name'])
+	end	
+    	@b << @a
+    end
   end
 
   # GET /degrees/1
