@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Degrees</title>
+<title> 
+        UNM Degree Plan Viewer | The University of New Mexico 
+ </title>
+ 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,12 +12,44 @@
 <body>
 
 	<div id="header">
-		<div id="headerwrap">
-			<a href="http://www.unm.edu/"><img alt="UNM Logo" height="60px" src="http://degrees.unm.edu/assets/layout/Logo-072057a2d0687e68145f541da12b18e3.png"></a>
+		<div id="headerwrap" >
+			<a href="http://www.unm.edu/"><img alt="UNM Logo" height="40px" src="http://degrees.unm.edu/assets/layout/Logo-072057a2d0687e68145f541da12b18e3.png"></a>
 		</div>
 	</div>
 
 <%= yield %>
+<br />
+<br />
 
+   <div id="footer">
+            <div class="container">
+               <hr/>
+               <div class="row">
+                  <div class="col-md-8">
+                     <p><a href="http://www.unm.edu"><img alt="The University of New Mexico" src="https://webcore.unm.edu/v2/images/unm-transparent-white.png"/></a></p>
+                     <p><small>&#169; The University of New Mexico<br/>
+                        Albuquerque, NM 87131, (505) 277-0111<br/>
+                        New Mexico's Flagship University</small>
+                     </p>
+                  </div>
+                  <div class="col-md-4">
+                     <ul class="list-inline">
+                        <li><a href="https://www.facebook.com/universityofnewmexico" title="UNM on Facebook"><span class="fa fa-facebook-square fa-2x">&#160;</span></a></li>
+                        <li><a href="http://instagram.com/uofnm" title="UNM on Instagram"><span class="fa fa-instagram fa-2x">&#160;</span></a></li>
+                        <li><a href="https://twitter.com/unm" title="UNM on Twitter"><span class="fa fa-twitter-square fa-2x">&#160;</span></a></li>
+                        <li><a href="http://uofnm.tumblr.com" title="UNM on Tumblr"><span class="fa fa-tumblr-square fa-2x">&#160;</span></a></li>
+                        <li><a href="http://www.youtube.com/user/unmlive" title="UNM on YouTube"><span class="fa fa-youtube-square fa-2x">&#160;</span></a></li>
+                     </ul>
+                     <p>more at <a href="http://social.unm.edu" title="UNM Social Media Directory &amp; Information">social.unm.edu</a></p>
+                     <ul class="list-inline" id="unm_footer_links">
+                        <li><a href="http://www.unm.edu/accessibility.html">Accessibility</a></li>
+                        <li><a href="http://www.unm.edu/legal.html">Legal</a></li>
+                        <li><a href="http://www.unm.edu/contactunm.html">Contact UNM</a></li>
+                        <li><a href="http://nmhedss2.state.nm.us/Dashboard/index.aspx?ID=21">New Mexico Higher Education Dashboard</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
 </body>
 </html>

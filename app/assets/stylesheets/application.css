@@ -8,13 +8,16 @@
 
 #header
 {
-	background: #c90039;
-	box-shadow: 0px 1px 3px #666;
+	background: #c10037;
+	box-shadow: 0px 7px 9px #666;
+	height:60px;
 }
 
 #headerwrap
 {
-	width: 1000px;
-	margin-left: auto;
+	width: 350px;
+	height: 30px;
+	margin-left: 60px;
 	margin-right: auto;
+	margin-top: -40px;
 }

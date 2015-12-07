@@ -1,11 +1,27 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en">
+   <head>
+      <meta charset="utf-8"/>
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+      <meta content="suDeBu3cQ5JEfYn92UdyZqkDPVCRI3QFK4dbV1tzUNk" name="google-site-verification"/>
+      <link href="//webcore.unm.edu/v1/images/unm.ico" rel="shortcut icon"/>
+      <link href="//webcore.unm.edu/v2/css/unm-styles.min.css" rel="stylesheet"/>
+      <link href="assets/css/site-styles.css" media="screen" rel="stylesheet" type="text/css"/>
+   </head>
+   <body id="home">
+      <div id="page">
+         <div id="upper">
+           <div class="container">
+            <br />
+              <br />
+                <br />
 
-<h1>UNM COURSES</h1>
 
 
-<br />
-<br />
-<table border="1">
+
+    <div>
+    <table border="0">
       <tbody id="courseTable">
         <tr class="class">
           <th colspan="2">Freshman</th>
@@ -24,25 +40,39 @@
           <th class="last">Spring</th>
         </tr>
         <tr>
-		<%for i in 0..@b.size-1 %>
+    <%for i in 0..@b.size-1 %>
         <td id = "term <%= i+1 %>"> 
-		<%for j in 0..@b[i].size-1 %>
-		 <%if @b[i][j][0]!=['Req']%>
-		  <%prestr=""%>			
-	      <%@b[i][j][2].each do |pre|%>
-		  <%prestr << pre.to_s %>
-		  <%prestr << " " %>
-	      <%end %>         
- 		<div id="<%= @b[i][j][0]%>" pre="<%=prestr%>"><%= @b[i][j][0]%> </div>
-			<!--<br></br>-->
-			<span class="crs_title"><%= @b[i][j][1]%></span>
-		<%else%>
-		<div><%= @b[i][j][1]%></div>
-		<%end %>
-		<% end %>
-        </td>
-        <% end %> 
-        </tr>
+    <%for j in 0..@b[i].size-1 %>
+     <%if @b[i][j][0]!=['Req']%>
+      <%prestr=""%>     
+        <%@b[i][j][2].each do |pre|%>
+      <%prestr << pre.to_s %>
+      <%prestr << " " %>
+        <%end %>         
+    <div id="<%= @b[i][j][0]%>" pre="<%=prestr%>"><%= @b[i][j][0]%> </div>
+      <!--<br></br>-->
+      <span class="crs_title"><%= @b[i][j][1]%></span>
+    <%else%>
+    <div><%= @b[i][j][1]%></div>
+    <%end %>
+    <% end %>
+    </td>
+    <% end %> 
+    </tr>
+
+
+
+
 </tbody>
 </table>
+</div> 
+</div>
+</div> 
+         
+<br />
+<br />
+<br />
+        
 
+   </body>
+</html>

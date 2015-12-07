@@ -1,11 +1,42 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en">
+   <head>
+      <meta charset="utf-8"/>
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+      <meta content="suDeBu3cQ5JEfYn92UdyZqkDPVCRI3QFK4dbV1tzUNk" name="google-site-verification"/>
+      <link href="//webcore.unm.edu/v1/images/unm.ico" rel="shortcut icon"/>
+      <link href="//webcore.unm.edu/v2/css/unm-styles.min.css" rel="stylesheet"/>
+      <link href="assets/css/site-styles.css" media="screen" rel="stylesheet" type="text/css"/>
+   </head>
+   <body id="home">
+      <div id="page">
+        <div>
+         <a href='http://www.unm.edu'><img height="40px" src="http://geo.unm.edu/images/banner/Banner/p3.jpg" /></a>
+        </div>
+         <div id="upper">
+           <div class="container">
+            <br />
+   Degree Plan Viewer is an Interactive web application which provides students a semester-by-semster outline of courses within a curriculum in a tabular format. Application allows the students and advisors to visualize pre- and post-requisites associated with a course. This application helps the students to understand how courses within a curriculum are liked and provides guiance for course scheduling.
+   <br />
+   <br />
 
-<h1>UNM DEPARTMENTS</h1>
-<br />
-<br />
 
-
- <% @parsed_dept.each do |event| %>
+   <div>
+    <% @parsed_dept.each do |event| %>
       <% dept_name = event["url"] %>
        <li><%= link_to(event["name"], degrees_path(:dept_name => dept_name)) %></li> 
-      <% end %>
+    <% end %>
+   </div> 
+
+   
+ </div>
+</div> 
+         
+                 
+         <br />
+         <br />
+         <br />
+         
+   </body>
+</html>
