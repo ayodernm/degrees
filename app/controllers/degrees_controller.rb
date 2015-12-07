@@ -5,6 +5,7 @@ class DegreesController < ApplicationController
   # GET /degrees.json
   def index
     @dept_name = params[:dept_name]
+    @dept = params[:dept]
     @degrees = Degree.all
     #response = RestClient.get 'http://jsonplaceholder.typicode.com/posts'
     #response = RestClient.get 'https://api.myjson.com/bins/1rlz1'

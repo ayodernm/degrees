@@ -11,15 +11,49 @@
 </head>
 <body>
 
-	<div id="header">
+<!-- old header -->
+
+	<!--<div id="header">
 		<div id="headerwrap" >
 			<a href="http://www.unm.edu/"><img alt="UNM Logo" height="40px" src="http://degrees.unm.edu/assets/layout/Logo-072057a2d0687e68145f541da12b18e3.png"></a>
 		</div>
 	</div>
 
+-->
+
+
+<!-- new header-->
+
+<div class="navbar navbar-unm">
+            <div class="container">
+               <a class="navbar-brand" href="http://www.unm.edu">The University of New Mexico</a><!-- search form -->
+               
+               <!-- end search form -->
+               <ul class="nav navbar-nav navbar-right hidden-xs" id="toolbar-nav">
+                  <li><a href="http://directory.unm.edu/departments/" title="UNM A to Z">UNM A-Z</a></li>
+                  <li><a href="https://my.unm.edu" title="myUNM">myUNM</a></li>
+                  <li><a href="http://directory.unm.edu" title="Directory">Directory</a></li>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Help <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="http://studentinfo.unm.edu" title="StudentInfo">StudentInfo</a></li>
+                        <li><a href="http://fastinfo.unm.edu" title="FastInfo">FastInfo</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+
+
+
 <%= yield %>
 <br />
 <br />
+
+
+
+
 
    <div id="footer">
             <div class="container">
