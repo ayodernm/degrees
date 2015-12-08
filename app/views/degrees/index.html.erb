@@ -54,10 +54,11 @@
       <%prestr << pre.to_s %>
       <%prestr << " " %>
         <%end %>         
-    <div id="<%= @b[i][j][0]%>" pre="<%=prestr%>"><%= @b[i][j][0]%> </div>
-      <!--<br></br>-->
+    <div id="<%= @b[i][j][0]%>" pre="<%=prestr%>"><%= @b[i][j][0]%>
+      <br>
       <span class="crs_title"><%= @b[i][j][1]%></span>
-    <%else%>
+    </div>
+	<%else%>
     <div><%= @b[i][j][1]%></div>
     <%end %>
     <% end %>

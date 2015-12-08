@@ -6,11 +6,16 @@
  *= require_tree . 
  */
 
-#header
+.navbar.navbar-unm
 {
 	background: #c10037;
 	box-shadow: 0px 7px 9px #666;
-	height:60px;
+	height: 65px;
+}
+
+#toolbar-nav
+{
+	margin-top: 15px;
 }
 
 #headerwrap
