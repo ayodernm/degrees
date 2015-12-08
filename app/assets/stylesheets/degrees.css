@@ -66,6 +66,15 @@ h1
 	border-bottom: 1px solid white;
 }
 
+#table-background
+{
+	background-color: #F2F2F2;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 50px;
+	padding-left: 0px;
+}
+
 #courseTable div
 {
 	font-size: 9px;
