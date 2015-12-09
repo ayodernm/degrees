@@ -16,7 +16,7 @@
 
    <div id="page">
 
-  
+
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -73,12 +73,12 @@
     <% @parsed_dept.each do |event| %>
       <% dept_name = event["url"] %>
       <% dept = event["name"] %>
-       <li><%= link_to(event["name"], degrees_path(:dept_name => dept_name,:dept => dept)) %></li> 
+       <li><%= link_to(event["name"], degrees_path(:dept_name => dept_name,:dept => dept)) %></li>
     <% end %>
-   </div> 
+   </div>
 </div>
 
  </div>
-</div> 
+</div>
    </body>
 </html>

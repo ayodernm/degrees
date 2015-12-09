@@ -54,17 +54,17 @@ function traverseReqs(course,direction,highlight,otherclass)
 			// a corequisite of a prerequisite is a prerequisite
 			traverseReqs(crs,"co","pre");
 		}
-		else if (highlight == "postco") {
+		else if (highlight == "post") {
 			// a postrequisite of a postcorequisite is a postrequisite
 			traverseReqs(crs,"post","post");
 			// a postcorequisite of a postcorequisite is a postcorequisite
-			traverseReqs(crs,"postco","postco");
+			traverseReqs(crs,"post","post");
 		}
 		else if (highlight == "post") {
 			// a postrequisite of a postrequisite is a postrequisite
 			traverseReqs(crs,"post","post");
 			// a post-corequisite of a postrequisite is a postrequisite
-			traverseReqs(crs,"postco","post");
+			traverseReqs(crs,"post","post");
 		}
 	}
 }
@@ -77,29 +77,14 @@ function addCourseTitle(course) {
 	if(course.substr(0,2) == "I-") $("#"+course).attr('id',course.substr(2)).addClass("ITU");
 }
 
-$(document).ready(function() { 
-
-	addCourseAttributes();
-	
-	$("#courseTable div[id]").each(function(){course = $(this).attr("id"); if(course.length>4) determinePostreqs(course); addCourseTitle(course);});
-	
+$(document).ready(function() {	
 	$("#courseTable div").mouseover(function(e) {
 		var course = $(this).attr("id");
+		determinePostreqs(course);
 		traverseReqs(course,"pre","pre");
 		traverseReqs(course,"post","post");
 		if(($(this).attr("title") !== undefined && $(this).attr("title").length<1) && (!$(this).hasClass("ITU")) && (course != 'GenEd')) $("#techelec").addClass('active');
-	}).mouseout(clearTable).click(function(e) {
-		var id = $(this).attr("id");
-		var title = $(this).attr("title");
-		var len = id.length;
-		var dept = id.substr(0,len-3);
-		var crs = id.substr(len-3,3);
-		
-		if(title!==undefined && title.length>1) window.location="http://undergrad-catalog.buffalo.edu/coursedescriptions/index.php?abbr="+dept+"&num="+crs;
-		else if (id == 'GenEd') window.location="http://undergrad-catalog.buffalo.edu/policies/degree/gened.shtml";
-	});
-	
-	
+	}).mouseout(clearTable);	
 });
 	
 	$(function() {
