@@ -73,9 +73,49 @@
     <% end %> 
     </tr>
 
+<%= javascript_tag do %>
+function highlightPrereq(element, index, array)
+{
+	$("[pre~='"+array[index]+"']").css("background-color", "#FFFFC6");
+}
 
+function highlightPostreq(element, index, array)
+{
+	$("[post~='"+array[index]+"']").css("background-color", "#7DDB95");
+}
 
+function clearPrereq(element, index, array)
+{
+	$("[pre~='"+array[index]+"']").css("background-color", "#545454");
+}
 
+function clearPostreq(element, index, array)
+{
+	$("[post~='"+array[index]+"']").css("background-color", "#545454");
+}
+
+$("#courseTable div").mouseover(function() {
+	var prereq = $(this).attr("pre");
+	var postreq = $(this).attr("post");
+	var prearr = prereq.split('~');
+	var postarr = postreq.split('~');
+	alert(prearr);
+	prearr.forEach(highlightPrereq);
+	postarr.forEach(highlightPostreq);
+});
+
+$("#courseTable div").onmouseout(function() {
+	var prereq = $(this).attr("pre");
+	var postreq = $(this).attr("post");
+	var prearr = prereq.split('~');
+	var postarr = postreq.split('~');
+	prearr.forEach(clearPrereq);
+	postarr.forEach(clearPostreq);	
+});
+
+<% end %>
+	
+	
 </tbody>
 </table>
 </center>
