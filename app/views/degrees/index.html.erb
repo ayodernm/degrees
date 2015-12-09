@@ -78,22 +78,16 @@
 <%= javascript_tag do %>
 function highlightPrereq(element, index, array)
 {
-	$("[pre~='"+array[index]+"']").css("background-color", "#FFFFC6");
+	$("div[id='"+element+"']").css("background-color", "#FFB266");
 }
 
 function highlightPostreq(element, index, array)
 {
-	$("[post~='"+array[index]+"']").css("background-color", "#7DDB95");
+	$("div[id='"+element+"']").css("background-color", "#7DDB95");
 }
 
-function clearPrereq(element, index, array)
-{
-	$("[pre~='"+array[index]+"']").css("background-color", "#545454");
-}
-
-function clearPostreq(element, index, array)
-{
-	$("[post~='"+array[index]+"']").css("background-color", "#545454");
+function clearTable() {
+	$("#courseTable div").css("background-color", "#E2EDF3");
 }
 
 $("#courseTable div").mouseover(function() {
@@ -101,18 +95,9 @@ $("#courseTable div").mouseover(function() {
 	var postreq = $(this).attr("post");
 	var prearr = prereq.split('~');
 	var postarr = postreq.split('~');
-	alert(prearr);
+	clearTable();
 	prearr.forEach(highlightPrereq);
 	postarr.forEach(highlightPostreq);
-});
-
-$("#courseTable div").onmouseout(function() {
-	var prereq = $(this).attr("pre");
-	var postreq = $(this).attr("post");
-	var prearr = prereq.split('~');
-	var postarr = postreq.split('~');
-	prearr.forEach(clearPrereq);
-	postarr.forEach(clearPostreq);	
 });
 
 <% end %>
@@ -121,9 +106,11 @@ $("#courseTable div").onmouseout(function() {
 </tbody>
 </table>
 </center>
+<br/>
+<p style="font-size: 50 px;line-height: 2em">Place the mouse over a course to highlight the <span style="background-color: #FFB266; border: 1px solid #555; color:#555; padding: 3px;">course prerequisites</span> and <br><span style="background-color: #7ddb95; border: 1px solid #555; padding: 3px; color:#555;">course postrequisites</span>.</p>
 </div> 
 </div>
-</div> 
+</div>
 </div>
  <br />        
 <br />
