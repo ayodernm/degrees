@@ -8,6 +8,8 @@
       <link href="//webcore.unm.edu/v1/images/unm.ico" rel="shortcut icon"/>
       <link href="//webcore.unm.edu/v2/css/unm-styles.min.css" rel="stylesheet"/>
       <link href="assets/css/site-styles.css" media="screen" rel="stylesheet" type="text/css"/>
+
+
    </head>
    <body id="home">
       <div id="page">
@@ -23,7 +25,7 @@
 <h3><center>Degree Plan of <%= @dept %></center></h3><br />
 
 
-    <div>
+    <div class="jumbotron">
       <center>
     <table border="0">
       <tbody id="courseTable">
@@ -52,13 +54,13 @@
       <%prestr=""%>     
         <%@b[i][j][2].each do |pre|%>
       <%prestr << pre.to_s %>
-      <%prestr << " " %>
+      <%prestr << "~" %>
         <%end %> 
 
          <%poststr=""%>     
         <%@b[i][j][3].each do |post|%>
       <%poststr << post.to_s %>
-      <%poststr<< " " %>
+      <%poststr<< "~" %>
         <%end %>         
     <div id="<%= @b[i][j][0]%>" pre="<%=prestr%>" post="<%=poststr%>" onclick="location.href='<%= @b[i][j][4] %>';"><%= @b[i][j][0]%>
       <!--<a href="<%= @b[i][j][4] %>"></a>-->
