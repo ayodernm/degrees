@@ -17,7 +17,7 @@
               <br />
                 <br />
 
-
+<br />
 
 <div id="table-background">
 <h3><center>Degree Plan of <%= @dept %></center></h3><br />
@@ -48,12 +48,20 @@
         <td id = "term <%= i+1 %>"> 
     <%for j in 0..@b[i].size-1 %>
      <%if @b[i][j][0]!=['Req']%>
+
       <%prestr=""%>     
         <%@b[i][j][2].each do |pre|%>
       <%prestr << pre.to_s %>
       <%prestr << " " %>
+        <%end %> 
+
+         <%poststr=""%>     
+        <%@b[i][j][3].each do |post|%>
+      <%poststr << post.to_s %>
+      <%poststr<< " " %>
         <%end %>         
-    <div id="<%= @b[i][j][0]%>" pre="<%=prestr%>"><%= @b[i][j][0]%>
+    <div id="<%= @b[i][j][0]%>" pre="<%=prestr%>" post="<%=poststr%>" onclick="location.href='<%= @b[i][j][4] %>';"><%= @b[i][j][0]%>
+      <!--<a href="<%= @b[i][j][4] %>"></a>-->
       <br>
       <span class="crs_title"><%= @b[i][j][1]%></span>
     </div>

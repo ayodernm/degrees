@@ -7,7 +7,7 @@ class DeptsController < ApplicationController
     @depts = Dept.all
     #response_dept = RestClient.get 'https://api.myjson.com/bins/4k8l7'
     #response_dept = RestClient.get 'https://api.myjson.com/bins/3l4rz'
-    response_dept = RestClient.get 'https://api.myjson.com/bins/4x5xz'
+    response_dept = RestClient.get 'https://api.myjson.com/bins/21r6t'
     @parsed_dept = JSON.parse(response_dept)
   end
 
