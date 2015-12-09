@@ -1,19 +1,14 @@
-/* @override 
-	http://www.eng.buffalo.edu/undergrad/advisement/flowsheets/flo_style_.css
-	http://www.eng.buffalo.edu/undergrad/advisement/flowsheets-new/flo_style_.css
-*/
-
 #courseTable div:hover 
 {
 	background-color: #C8E6F6;
 }
 
-#courseTable .prereq
+#courseTable .pre
 {
 	background-color: #FFFFC6;
 }
 
-#courseTable .prereq.immediate
+#courseTable .pre.immediate
 {
 	background-color: #FFFF00;
 }
@@ -54,12 +49,6 @@ h1
 	align-text: center;
 }
 
-#courseTable div
-{
-	font-size: 10px;
-	font-weight: bold;
-}
-
 #courseTable th
 {
 	font-size: 10px;
@@ -77,10 +66,21 @@ h1
 	border-bottom: 1px solid white;
 }
 
+#table-background
+{
+	background-color: #F2F2F2;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 50px;
+	padding-left: 0px;
+}
+
 #courseTable div
 {
-	height: 60px;
-	width: 120px;
+	font-size: 9px;
+	font-weight: bold;
+	height: 75px;
+	width: 100px;
 	background-color: #E2EDF3;
 	margin: 1px;
 	padding: 5px 2px 2px 5px;
