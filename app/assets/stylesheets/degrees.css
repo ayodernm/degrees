@@ -3,50 +3,15 @@
 	background-color: #C8E6F6;
 }
 
-#courseTable pre
-{
-	background-color: #FFFFC6;
-}
-
-#courseTable .pre.immediate
-{
-	background-color: #FFFF00;
-}
-
-#courseTable .coreq
-{
-	background-color: #FFD0D0;
-}
-
-#courseTable .coreq.immediate
-{
-	background-color: #FF9E9E;
-}
-
-#courseTable .postreq
-{
-	background-color: #7DDB95;
-}
-
-#courseTable .postcoreq
-{
-	background-color: #AEEDD7;
-}
-
-#techelec.active
-{
-	background-color: #FFCC00;
-}
-
-#techelec
-{
-	padding: 5px;
-	margin-left: -5px;
-}
-
 h1
 {
 	align-text: center;
+}
+
+#legend
+{
+	align-text: center;
+	font-size: 20px;
 }
 
 #courseTable th
