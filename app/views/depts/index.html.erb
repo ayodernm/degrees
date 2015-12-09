@@ -10,13 +10,13 @@
       <link href="assets/css/site-styles.css" media="screen" rel="stylesheet" type="text/css"/>
       <!-- bootstrap-carousal-->
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      
+
    </head>
    <body id="home">
 
    <div id="page">
 
-  
+
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -73,12 +73,12 @@
     <% @parsed_dept.each do |event| %>
       <% dept_name = event["url"] %>
       <% dept = event["name"] %>
-       <li><%= link_to(event["name"], degrees_path(:dept_name => dept_name,:dept => dept)) %></li> 
+       <li><%= link_to(event["name"], degrees_path(:dept_name => dept_name,:dept => dept)) %></li>
     <% end %>
-   </div> 
+   </div>
 </div>
 
  </div>
-</div> 
+</div>
    </body>
 </html>
