@@ -13,6 +13,8 @@ class DegreesController < ApplicationController
     response = RestClient.get @dept_name
     @parsed = JSON.parse(response)
     a=Array.new
+    post=Array.new
+    url=Array.new
     @b=Array.new
     count=0
     max_requirements=0
@@ -28,8 +30,9 @@ class DegreesController < ApplicationController
       for j in 0..@parsed['terms'][i]['requirements'].size-1
 		  if @parsed['terms'][i]['requirements'][j]['courses'].size >=1        
 			for k in 0..@parsed['terms'][i]['requirements'][j]['courses'].size-1
-	          a<< [@parsed['terms'][i]['requirements'][j]['courses'][k]['number'],@parsed['terms'][i]['requirements'][j]['courses'][k]['title'],@parsed['terms'][i]['requirements'][j]['courses'][k]['prerequisites']]
-			end
+	          a<< [@parsed['terms'][i]['requirements'][j]['courses'][k]['number'],@parsed['terms'][i]['requirements'][j]['courses'][k]['title'],@parsed['terms'][i]['requirements'][j]['courses'][k]['prerequisites'],@parsed['terms'][i]['requirements'][j]['courses'][k]['postrequisites'],@parsed['terms'][i]['requirements'][j]['courses'][k]['url']]
+			      
+      end
 		  else
 	        a<< [['Req'],@parsed['terms'][i]['requirements'][j]['name'],['']]
 		  end
@@ -37,6 +40,7 @@ class DegreesController < ApplicationController
 	end	
     	@b.insert(i,a)
       a=Array.new
+
     end
   end
 
